@@ -1,11 +1,20 @@
-fn main(x: Field, y: pub Field) {
-    assert(x != y);
-}
+use std::hash::poseidon2;
 
-#[test]
-fn test_main() {
-    main(1, 2);
+/**
+* @notice Hashing the passcode and chainId and checking if it matches the serverHash
+*/
+fn main(
+    reqDomain: Field,
+    passcode: Field,
+    serverHash: pub Field,
+    domain: pub Field,
+    chainId: pub Field,
+    signing_address: Field,
+    proving_address: pub Field
+) {
+    let hash = poseidon2::Poseidon2::hash([passcode, chainId], 2);
 
-    // Uncomment to make test fail
-    // main(1, 1);
+    assert(hash == serverHash);
+    assert(domain == reqDomain);
+    assert(signing_address == proving_address);
 }
