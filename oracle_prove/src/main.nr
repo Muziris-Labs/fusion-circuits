@@ -34,7 +34,7 @@ fn main(
     signature: [u8; 64],
     hashed_message: pub [u8; 32],
     tx_hash: pub Field,
-    verifying_address: Field, // The address that is being verified, used as flag
+    verifying_address: pub Field, // The address that is being verified, used as flag
     signing_address: pub Field // The address that signed the message, used as flag
 ) {
     let result = server_verify(pub_key_x, pub_key_y, signature, hashed_message);

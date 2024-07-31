@@ -1,5 +1,5 @@
 [package]
-name = "oracle_proof"
+name = "p2_hash_65"
 type = "bin"
 authors = [""]
 compiler_version = ">=0.31.0"
