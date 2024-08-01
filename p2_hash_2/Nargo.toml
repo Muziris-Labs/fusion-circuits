@@ -2,6 +2,6 @@
 name = "p2_hash_2"
 type = "bin"
 authors = [""]
-compiler_version = ">=0.31.0"
+compiler_version = ">=0.30.0"
 
 [dependencies]

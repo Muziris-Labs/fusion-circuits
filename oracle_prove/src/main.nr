@@ -1,4 +1,4 @@
-use std::hash::poseidon2;
+use dep::std::hash::poseidon2;
 
 /**
 * @notice verify the Signature through the Oracle

@@ -1,4 +1,4 @@
-use std::hash::poseidon2;
+use dep::std::hash::poseidon2;
 
 /**
 * @notice Poseidon2 Hash used in most of the current circuit with 65 inputs
