@@ -54,7 +54,4 @@ fn main(
     let hash = poseidon2::Poseidon2::hash(combined, 65);
 
     assert(hash == tx_hash);
-
-    println(verifying_address); // Used as flag to verify with the contract
-    println(signing_address); // Used as flag to verify with the contract
 }
