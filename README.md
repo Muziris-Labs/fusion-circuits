@@ -56,7 +56,6 @@ Credit_prove circuit is used to verify the credit and debit of Gas credits
 |     txHash      | u8       |    32    |     public     |
 |     amount      | Field    |    1     |     public     |
 |     tx_type     | Field    |    1     |     public     |
-| signing_address | Field    |    1     |     public     |
 | proving_address | Field    |    1     |     public     |
 
 ## p2_hash_2

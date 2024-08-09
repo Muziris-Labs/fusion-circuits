@@ -13,8 +13,7 @@ fn main(
     amount: pub Field, // The amount that is being verified, used as flag
     tx_type: pub u8, // The transaction type that is being verified, used as flag
     // 0 = credit, 1 = debit
-    verifying_address: pub Field,// The address that is being verified, used as flag
-    signing_address: pub Field // The address that signed the message, used as flag
+    signing_address: pub Field// The address that signed the message, used as flag
 ) {
     let hash = poseidon2::Poseidon2::hash([passcode, chainId], 2);
 
