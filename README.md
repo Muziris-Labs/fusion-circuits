@@ -42,6 +42,23 @@ Deploy_prove circuit is used to verify the payload is from the server.
 | signing_address | Field    |    1     |     public     |
 | proving_address | Field    |    1     |     public     |
 
+## credit_prove
+
+Credit_prove circuit is used to verify the credit and debit of Gas credits
+
+|   **Inputs**    | **Type** | **Size** | **Visibility** |
+| :-------------: | -------- | :------: | :------------: |
+|    reqDomain    | Field    |    1     |    private     |
+|    passcode     | Field    |    1     |    private     |
+|   serverHash    | Field    |    1     |     public     |
+|     domain      | Field    |    1     |     public     |
+|    chaindId     | Field    |    1     |     public     |
+|     txHash      | u8       |    32    |     public     |
+|     amount      | Field    |    1     |     public     |
+|     tx_type     | Field    |    1     |     public     |
+| signing_address | Field    |    1     |     public     |
+| proving_address | Field    |    1     |     public     |
+
 ## p2_hash_2
 
 Helper function to hash inputs

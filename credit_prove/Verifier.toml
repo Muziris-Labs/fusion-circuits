@@ -1,0 +1,8 @@
+amount = ""
+chainId = ""
+domain = ""
+serverHash = ""
+signing_address = ""
+txHash = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+tx_type = ""
+verifying_address = ""
