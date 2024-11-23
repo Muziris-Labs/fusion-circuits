@@ -14,66 +14,44 @@
 
 # Circuits
 
-## oracle_prove
+## shamir_generate_2_3
 
-Oracle_prove circuit is used to verify the ECDSA signature through RPC Call to the server. If verified, server provides a secret based on the key which is then hashed to verify the credentials with the contract.
+Shamir_generate_2_3 circuit is used to generate a 2-of-3 Shamir secret sharing scheme.
+
+| **Inputs** | **Type** | **Size** | **Visibility** |
+| :--------: | -------- | :------: | :------------: |
+|   secret   | u64[]    |    32    |    private     |
+|     a1     | u64[]    |    32    |    private     |
+|  returns   | Share[]  |    3     |     public     |
+
+## shamir_reconstruct_2_3
+
+Shamir_reconstruct_2_3 circuit is used to reconstruct a 2-of-3 Shamir secret sharing scheme.
+
+| **Inputs** | **Type** | **Size** | **Visibility** |
+| :--------: | -------- | :------: | :------------: |
+|   share    | Share[]  |    2     |    private     |
+|  returns   | Field    |    32    |     public     |
+
+## shamir_prove
+
+Shamir_prove circuit is used to prove the correctness of the Shamir secret sharing scheme with the hash of the reconstructed secret.
 
 |    **Inputs**     | **Type** | **Size** | **Visibility** |
 | :---------------: | -------- | :------: | :------------: |
-|     pub_key_x     | Field[]  |    32    |    private     |
-|     pub_key_y     | Field[]  |    32    |    private     |
-|     signature     | u8[]     |    64    |    private     |
-|  hashed_message   | u8[]     |    32    |    private     |
-|      tx_Hash      | Field    |    1     |     public     |
+|      shares       | Share[]  |    2     |    private     |
+|      message      | u8[]     |    32    |    private     |
+|       hash        | Field    |    1     |     public     |
 | verifying_address | Field    |    1     |     public     |
 |  signing_address  | Field    |    1     |     public     |
 
-## deploy_prove
-
-Deploy_prove circuit is used to verify the payload is from the server.
-
-|   **Inputs**    | **Type** | **Size** | **Visibility** |
-| :-------------: | -------- | :------: | :------------: |
-|    reqDomain    | Field    |    1     |    private     |
-|    passcode     | Field    |    1     |    private     |
-|   serverHash    | Field    |    1     |     public     |
-|     domain      | Field    |    1     |     public     |
-|    chaindId     | Field    |    1     |     public     |
-| signing_address | Field    |    1     |     public     |
-| proving_address | Field    |    1     |     public     |
-
-## credit_prove
-
-Credit_prove circuit is used to verify the credit and debit of Gas credits
-
-|   **Inputs**    | **Type** | **Size** | **Visibility** |
-| :-------------: | -------- | :------: | :------------: |
-|    reqDomain    | Field    |    1     |    private     |
-|    passcode     | Field    |    1     |    private     |
-|   serverHash    | Field    |    1     |     public     |
-|     domain      | Field    |    1     |     public     |
-|    chaindId     | Field    |    1     |     public     |
-|     txHash      | u8       |    32    |     public     |
-|     amount      | Field    |    1     |     public     |
-|     tx_type     | Field    |    1     |     public     |
-| proving_address | Field    |    1     |     public     |
-
-## p2_hash_2
+## p2_hash_32
 
 Helper function to hash inputs
 
 | **Inputs** | **Type** | **Size** | **Visibility** |
 | :--------: | -------- | :------: | :------------: |
-|   inputs   | Field[]  |    2     |    private     |
-|  returns   | Field    |    1     |     public     |
-
-## p2_hash_64
-
-Helper function to hash inputs
-
-| **Inputs** | **Type** | **Size** | **Visibility** |
-| :--------: | -------- | :------: | :------------: |
-|   inputs   | Field[]  |    65    |    private     |
+|   inputs   | Field[]  |    32    |    private     |
 |  returns   | Field    |    1     |     public     |
 
 # Testing and Deployment

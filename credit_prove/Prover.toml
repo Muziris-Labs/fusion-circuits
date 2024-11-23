@@ -1,9 +1,0 @@
-amount = ""
-chainId = ""
-domain = ""
-passcode = ""
-reqDomain = ""
-serverHash = ""
-signing_address = ""
-txHash = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
-tx_type = ""

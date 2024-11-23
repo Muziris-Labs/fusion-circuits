@@ -1,7 +1,0 @@
-[package]
-name = "p2_hash_65"
-type = "bin"
-authors = [""]
-compiler_version = ">=0.30.0"
-
-[dependencies]
