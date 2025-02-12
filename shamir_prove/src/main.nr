@@ -8,9 +8,7 @@ struct Share {
 pub fn main(
     shares: [Share; 2],
     message: pub [u8; 32], // The message encoded to verify the transaction, used as flag
-    hash: pub Field,
-    verifyingAddress: pub Field, // The address of the EOA that signed the message through trusted forwarder, used as flag
-    signingAddress: pub Field // The address of the EOA that executed the transaction, used as flag
+    hash: pub Field
 ) {
     let mut secret: [Field; 32] = [0; 32];
 
